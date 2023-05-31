@@ -1,5 +1,5 @@
-import { createApp } from "vue";
-import App from "./App.vue";
-import router from "./router";
+import { createApp } from 'vue'
+import App from './App.vue'
+import entry from "@/common/entry";
 
-createApp(App).use(router).mount("#app");
+entry(createApp(App)).mount('#app')

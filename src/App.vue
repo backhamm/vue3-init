@@ -1,21 +1,22 @@
 <template>
-  <nav><router-link to="/">Home</router-link>{{ getArr }}</nav>
-  <router-view />
+  <nav>
+    <router-link to="/">Home{{a}}</router-link> |
+    <router-link to="/about">{{ $t('common.lang') }}{{ $t('home.home') }}</router-link>
+  </nav>
+  <router-view/>
 </template>
 
 <script lang="ts" setup>
-import { computed, onMounted, reactive } from "vue";
-const count = reactive<{ a: number }>({ a: 1 });
+import {computed, onMounted, reactive} from "vue";
+const obj: {a: number} = reactive({a: 1})
 
 onMounted(() => {
   setTimeout(() => {
-    count.a++;
-  }, 2000);
-});
-
-const getArr = computed(() => {
-  return count.a + 1;
-});
+    obj.a++
+  }, 2000)
+  localStorage.setItem('lang', 'zh')
+})
+const a = computed(() => obj.a)
 </script>
 
 <style lang="scss">
