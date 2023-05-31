@@ -14,7 +14,6 @@ onMounted(() => {
   setTimeout(() => {
     obj.a++
   }, 2000)
-  localStorage.setItem('lang', 'zh')
 })
 const a = computed(() => obj.a)
 </script>
