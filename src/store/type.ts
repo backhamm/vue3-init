@@ -1,4 +1,8 @@
 export interface CommonStateT {
     lang: string
-    count: number
+}
+
+export interface UserStateT {
+    username?: string
+    [key: string]: any
 }
