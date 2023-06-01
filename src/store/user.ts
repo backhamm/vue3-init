@@ -1,12 +1,14 @@
 import {defineStore} from "pinia";
-import {UserStateT} from "@/store/type";
+import {UserInfoT, UserStateT} from "@/store/type";
 import {reactive, UnwrapNestedRefs} from "vue";
-import {persist, setState} from "@/store/config";
+import {persist} from "@/store/config";
 
 export const useUserStore = defineStore('userStore', () => {
-    const userState: UnwrapNestedRefs<UserStateT> = reactive({})
+    const userState: UnwrapNestedRefs<UserStateT> = reactive({
+        userInfo: {}
+    })
 
-    const setUserState = (data: UserStateT) => setState(userState, data)
+    const setUserInfo = (data: UserInfoT) => userState.userInfo = data
 
-    return {userState, setUserState}
+    return {userState, setUserInfo}
 }, persist)

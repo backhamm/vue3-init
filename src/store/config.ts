@@ -7,10 +7,3 @@ export const persist: any = {
         ]
     }
 }
-
-// 设置state通用方法
-export const setState = (state: any, data: any) => {
-    Object.keys(data).forEach(el => {
-        state[el] = data[el]
-    })
-}
