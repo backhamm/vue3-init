@@ -4,7 +4,7 @@ import i18n from "@/i18n";
 import {reactive, UnwrapNestedRefs} from "vue";
 import {CommonStateT} from "@/store/type";
 import {persist} from "@/store/config";
-import {setPageTitle} from "@/common/func";
+import {setPageTitle} from "@/utils/func";
 
 export const useCommonStore = defineStore('commonStore', () => {
     const commonState: UnwrapNestedRefs<CommonStateT> = reactive({

@@ -1,4 +1,4 @@
-import {_this} from "@/common/vueUse";
+import {_this} from "@/utils/vueUse";
 
 export const copy = (data: any) => {
     return JSON.parse(JSON.stringify(data))

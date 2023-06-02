@@ -1,6 +1,6 @@
 import { createI18n } from "vue-i18n";
 import messages from "@/i18n/require";
-import {getStorageStore} from "@/common/func";
+import {getStorageStore} from "@/utils/func";
 
 export const initLang: string = getStorageStore('commonStore.commonState.lang') || navigator.language.slice(0, 2) || 'zh'
 

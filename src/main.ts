@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import VueUse from "@/common/vueUse";
-import '@/common/entry'
+import VueUse from "@/utils/vueUse";
+import '@/utils/entry'
 
 VueUse(createApp(App)).mount('#app')
