@@ -1,8 +1,9 @@
 <template>
   <div class="home">
     lang：{{commonState.lang}}
-    <button @click="click">click</button>
+    <div class="spark-button" @click="click">click</div>
     username：{{username}}
+    <i class="icon-home1" />
   </div>
 </template>
 

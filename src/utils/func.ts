@@ -17,3 +17,24 @@ export const setPageTitle = () => {
 
     document.title = _this.$t(`navTitle.${title || name}`)
 }
+
+const getZero = (num: number) => {
+    let zero = ''
+    for (let i = 0; i < num; i++) {
+        zero += '0'
+    }
+    return zero
+}
+
+// 千分符格式化货币不四舍五入
+export const currencyFormat = (value: number | string, decimal = 2) => {
+    if (isNaN(Number(value))) {
+        return value
+    }
+    const num = String(value).split('.')
+    const num1 = num[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    let num2 = ''
+    num[1] && (num2 = num[1].slice(0, decimal))
+    num2.length < decimal && (num2 += getZero(decimal - num2.length))
+    return num1 + '.' + num2
+}

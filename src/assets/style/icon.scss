@@ -1,0 +1,15 @@
+i[class*='icon-'] {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+$tabIcons: home0, home1;
+@each $item in $tabIcons {
+  .icon-#{$item} {
+    background-image: url('@/assets/icon/tab/#{$item}.png');
+  }
+}
